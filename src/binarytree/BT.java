@@ -148,7 +148,7 @@ public class BT {
 			display_name(temp);
 		break;
 	
-		case 4 : System.out.println("Get the Elements by group :  \n1.Alkali metal \n2.Alkaline-earth metals \n3.Transition metal \n 4. Metals \n5. Nonmetals \n 6. Halogens \n 7. Nobal gases \n8.Rare-earth Elements and Lanthanoid Elements \n9. Actinoid Elements ");
+		case 4 : System.out.println("Get the Elements by group :  \n1.Alkali metal \n2.Alkaline-earth metals \n3.Transition metal \n 4. Metals \n5. Non-metals \n 6. Halogens \n 7. Noble gases \n8.Rare-earth Elements ");
 		System.out.println("Enter the group choice : ");
 		int op = sc.nextInt();
 		switch(op)
@@ -171,15 +171,15 @@ public class BT {
 		case 6:System.out.println("Halogens : "); 
 		 display_hal(temp);
 		break;
-		case 7:System.out.println("Nobal gases: ");  
+		case 7:System.out.println("Noble gases : ");  
 		display_nobal(temp);
 		break;
-		case 8:System.out.println("Rare-earth Elements and lanthanoids: ");  
+		case 8:System.out.println("Rare-earth Elements : ");  
 		display_rare(temp);
 		break;
-		case 9:System.out.println("Actinoids: "); 
-		display_Act(temp);
-		break;
+		//case 9:System.out.println("Actinoids: "); 
+		//display_Act(temp);
+		//break;
 		default:System.out. println("Invalid…");
 		break;
 		}
@@ -201,7 +201,7 @@ public class BT {
 	 return; 
 	} 
 	displayd(head.left); 
-	if((head.block).compareTo("d")==0);
+	if((head.block).compareTo("d")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 
@@ -218,7 +218,7 @@ public class BT {
 	return;
 	}
 	displays(head.left);
-	if((head.block).compareTo("s")==0);
+	if((head.block).compareTo("s")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 
@@ -234,7 +234,7 @@ public class BT {
 	return;
 	}
 	displayp(head.left);
-	if((head.block).compareTo("p")==0);
+	if((head.block).compareTo("p")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -249,7 +249,7 @@ public class BT {
 	return;
 	}
 	displayf(head.left);
-	if((head.block).compareTo("f")==0);
+	if((head.block).compareTo("f")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -284,7 +284,7 @@ public class BT {
 	 return; 
 	} 
 	display_alkalli(head.left); 
-	if((head.group).compareTo("alkali")==0);
+	if((head.group).compareTo("Alkali")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -299,7 +299,7 @@ public class BT {
 	 return; 
 	} 
 	display_alkaline(head.left); 
-	if((head.group).compareTo("alkaline")==0);
+	if((head.group).compareTo("Alkali Earth Metal")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -312,7 +312,7 @@ public class BT {
 	 return; 
 	} 
 	display_tran(head.left); 
-	if((head.group).compareTo("Transition")==0);
+	if((head.group).compareTo("Transition Metal")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -325,7 +325,7 @@ public class BT {
 	 return; 
 	} 
 	display_metal(head.left); 
-	if((head.group).compareTo("Metals")==0);
+	if((head.group).compareTo("Metal")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -338,7 +338,7 @@ public class BT {
 	 return; 
 	} 
 	display_nonm(head.left); 
-	if((head.group).compareTo("Nonmetals")==0);
+	if((head.group).compareTo("Non-metal")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -351,7 +351,7 @@ public class BT {
 	 return; 
 	} 
 	display_hal(head.left); 
-	if((head.group).compareTo("Halogens")==0);
+	if((head.group).compareTo("Halogen")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -364,7 +364,7 @@ public class BT {
 	 return; 
 	} 
 	display_nobal(head.left); 
-	if((head.group).compareTo("Nobal")==0);
+	if((head.group).compareTo("Noble Gas")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -373,14 +373,14 @@ public class BT {
 
 
 
-	//for actinoids
-	void display_Act(Element temp){
+	//for actinoids rare earth
+	void display_rare(Element temp){
 	if (head == null) 
 	{
 	 return; 
 	} 
 	display_Act(head.left); 
-	if((head.group).compareTo("actinoids")==0);
+	if((head.group).compareTo("Rare Earth")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
@@ -388,7 +388,7 @@ public class BT {
 
 	}
 
-	//for lanthanoids
+	/*//for lanthanoids
 	void display_rare(Element temp){
 
 	if(((head.group).compareTo("Rare earth")==0) || ((head.group).compareTo("lanthanoids")==0) );
@@ -398,7 +398,7 @@ public class BT {
 	display_rare(head.right);
 
 
-	}
+	}*/
 
 	//___________________
 	void  display_name(Element temp){
