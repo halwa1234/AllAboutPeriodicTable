@@ -379,12 +379,12 @@ public class BT {
 	{
 	 return; 
 	} 
-	display_Act(head.left); 
+	display_rare(head.left); 
 	if((head.group).compareTo("Rare Earth")==0)
 	{
 	System.out.printf("%8s %5s %4d %4f  %8s %10s %20s”,head.name,head.chemicalSymbol,head.atomicNo,head.atomicMass,head.group,head.oxidation_state,head.electronic_configuration");
 	}
-	display_Act(head.right);
+	display_rare(head.right);
 
 	}
 
