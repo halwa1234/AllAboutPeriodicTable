@@ -1,5 +1,11 @@
 package binarytree;
 
+
+
+
+
+
+
 public class Element {
 	String name;
 	String chemicalSymbol;
@@ -12,3 +18,13 @@ public class Element {
 	Element right;
 	Element left;
 }
+
+
+ 
+ 
+
+
+
+
+
+
