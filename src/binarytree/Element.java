@@ -36,7 +36,7 @@ public class Element {
 	
 	Element(int i){
 		name=elementlist.StringReadCellData(i, 0);
-		chemicalSymbol=elementlist.StringReadCellData(i+2, 1);
+		chemicalSymbol=elementlist.StringReadCellData(i, 1);
 		block="";
 		group=elementlist.StringReadCellData(i, 3);
 		
