@@ -6,20 +6,12 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/commons-io-2.9.0-bin/commons-io-2.9.0/commons-io-2.9.0.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/poi-bin-5.0.0-20210120/poi-5.0.0/poi-5.0.0.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/poi-ooxml-4.1.2.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/jars/poi-bin-4.1.2-20200217/poi-4.1.2/poi-4.1.2.jar"/>
+	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/jars/poi-bin-4.1.2-20200217/poi-4.1.2/poi-ooxml-4.1.2.jar"/>
+	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/jars/poi-bin-4.1.2-20200217/poi-4.1.2/poi-ooxml-schemas-4.1.2.jar"/>
+	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/jars/commons-collections4-4.4-bin/commons-collections4-4.4/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/jars/commons-compress-1.20-bin/commons-compress-1.20/commons-compress-1.20.jar"/>
+	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/jars/poi-bin-4.1.2-20200217/poi-4.1.2/ooxml-lib/xmlbeans-3.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/awesomeness/Documents/GitHub/jars/commons-io-2.9.0-bin/commons-io-2.9.0/commons-io-2.9.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
