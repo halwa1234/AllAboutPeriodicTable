@@ -35,13 +35,13 @@ public class Element {
 	}
 	
 	Element(int i){
-		name=elementlist.ReadCellData(i+2, 0);
-		chemicalSymbol=elementlist.ReadCellData(i+2, 1);
+		name=elementlist.StringReadCellData(i, 0);
+		chemicalSymbol=elementlist.StringReadCellData(i+2, 1);
 		block="";
-		group=elementlist.ReadCellData(i+2, 3);
+		group=elementlist.StringReadCellData(i, 3);
 		
-		atomicMass=Integer.parseInt(elementlist.ReadCellData(i+2, 5));
-		atomicNo=Integer.parseInt(elementlist.ReadCellData(i+2, 2));
+		atomicMass=(float) elementlist.IntReadCellData(i, 5);
+		atomicNo=(int) elementlist.IntReadCellData(i, 2);
 		
 		right=null;
 		left=null;
