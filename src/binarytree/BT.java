@@ -8,10 +8,24 @@ public class BT {
 		head=null;
 	}
 	
+	void automateNumber() {
+		int i=1;
+		Element n;
+		while(i<113) {
+			n=new Element(i);
+			createByAtomicNo(head, n);
+			System.out.println(i);
+			i++;
+		}
+		System.out.println("Created!!");
+	}
 	
+	void automateName() {
+		
+	}
 	
 	void createByAtomicNo(Element falsehead, Element now) {
-		if (head==null)	head=now;
+		if (falsehead==null)	head=now;
 		else if(falsehead.atomicNo>now.atomicNo) createByAtomicNo(falsehead.right,now);
 		else createByAtomicNo(falsehead.left,now);
 	}
@@ -414,5 +428,16 @@ public class BT {
 	display_name(head.right);
 	}
 
+	
+	public static void main (String[] args) {
+		BT tree=new BT();
+		System.out.println("Automating");
+
+		tree.automateNumber();
+		System.out.println("Displating");
+
+		tree.displayall(tree.head);
+		System.out.println("Done.");
+	}
 
 }
