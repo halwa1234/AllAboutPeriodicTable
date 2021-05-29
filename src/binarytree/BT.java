@@ -8,6 +8,8 @@ public class BT {
 		head=null;
 	}
 	
+	
+	
 	void createByAtomicNo(Element falsehead, Element now) {
 		if (head==null)	head=now;
 		else if(falsehead.atomicNo>now.atomicNo) createByAtomicNo(falsehead.right,now);
