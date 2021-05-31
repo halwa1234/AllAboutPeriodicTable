@@ -37,10 +37,10 @@ public class Element {
 	Element(int i){
 		name=elementlist.StringReadCellData(i, 0);
 		chemicalSymbol=elementlist.StringReadCellData(i, 1);
-		block="";
+		block=elementlist.StringReadCellData(i, 4);
 		group=elementlist.StringReadCellData(i, 3);
 		
-		atomicMass=(float) elementlist.IntReadCellData(i, 5);
+		atomicMass=(float) elementlist.IntReadCellData(i, 6);
 		atomicNo=(int) elementlist.IntReadCellData(i, 2);
 		
 		right=null;
@@ -48,7 +48,7 @@ public class Element {
 	}
 	
 	void display(){
-		System.out.println(name+ " ("+chemicalSymbol+")\n Group- "+group
+		System.out.println(name+ " ("+chemicalSymbol+")\n Group- "+group+"          Block- "+block
 				+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);
 	}
 	
