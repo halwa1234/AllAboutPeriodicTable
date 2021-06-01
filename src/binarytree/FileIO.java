@@ -78,7 +78,7 @@ public class FileIO {
 		
 		
 		
-		System.out.println(name+ " ("+chemicalSymbol+")				Pronounciation-"+pronounce
+/*               System.out.println(name+ " ("+chemicalSymbol+")				Pronounciation-"+pronounce
 				+ "\n Group- "+group+"          Block- "+block
 				+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);
 		System.out.println("\nDescription- "+description);
@@ -98,6 +98,45 @@ public class FileIO {
 		}
 		
 		System.out.println("\nSources- "+sources);
-		System.out.println("\n Uses- "+uses);
+		System.out.println("\n Uses- "+uses);*/
+		
+		System.out.println(" __________");
+		System.out.println("                         ");
+		System.out.println("  "+name+"("+chemicalSymbol+")");
+		System.out.println(" __________");
+		
+		System.out.println("\n| Pronounciation    - "+pronounce);
+		System.out.println("\n| Group             - "+group);
+		System.out.println("\n| Block             - "+block);
+		System.out.println("\n| Atomic Number(Z)  - "+atomicNo);
+		System.out.println("\n| Atomic Mass(A)    - "+atomicMass);
+		System.out.println("\n| Description       - "+description);
+		System.out.println("\n| Shells            - "+shell);
+		System.out.println("\n| Orbitals          - "+orbitals);
+		System.out.println("\n| Name Origin       - "+nameOrigin);
+		
+
+		try{
+			int year=(int) IntReadCellData(i,36);
+		System.out.println("\n| Discovered By     - "+discoveredBy);
+		System.out.println("\n| Location          - "+location);
+		System.out.println("\n| Year              - "+year);
+			
+
+		}
+		catch(IllegalStateException E){
+			String year=StringReadCellData(i, 36);
+
+			System.out.println("\n| Discovered By     - "+discoveredBy);
+			System.out.println("\n| Location          - "+location);
+			System.out.println("\n| Year              - "+year);
+			
+
+		}
+		                                                                              
+		                                                         
+		
+		System.out.println("\n| Sources           - "+sources);
+		System.out.println("\n| Uses              - "+uses);
 	}
 }
