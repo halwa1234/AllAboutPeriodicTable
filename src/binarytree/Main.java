@@ -23,7 +23,7 @@ public class Main {
 	static void viewelements() {
 
 				String x="";
-		while (x!="0") {
+		do{
 			System.out.print("\n0. Go Back \n1. View elements by name \n2 View elements by atomic number \nEnter your choice");
 
 				x=sc.next();
@@ -37,12 +37,12 @@ public class Main {
 					default: System.out.println("Enter valid value.");
 				}
 
-		}
+		}while(x.compareTo("0") > 0);
 	}
 
 	static void viewgroup() {
 		String x="";
-		while(x!="0") {
+		do{
 			System.out.println("Enter choice:\n0.Go back \n1.Alkali Metal \n2.Alkali Earth Metal \n3.Non-Metal \n4.Metal \n5.Halogen \n6.Noble Gas \n7.Transition Metal \n8.Rare Earth metal");
 
 				x=sc.next();
@@ -76,14 +76,14 @@ public class Main {
 				default:System.out.println("Enter correct choice");
 				}
 
-		}
+		}while(x.compareTo("0") > 0);
 	}
 
 	static void viewBlock()
 	{
 
 			String x="";
-			while(x!="0"){
+			do{
 				System.out.println("\n1. s - block \n 2. p - block \n 3. d - block \n 4. f - block ");
 
 					x=sc.next();
@@ -108,13 +108,13 @@ public class Main {
 					System.out.println("Do you want to continue ? \n Enter 1 for yes \n Enter 0 for no ");
 
 
-			}
+			}while(x.compareTo("0") > 0);
 	}
 
 	static void search() {
 		String x="";
 		int check=0;
-		while(x!="0") {
+		do{
 
 				if (check==0) {
 					System.out.println("\nSEARCH BY-\n0. Go back \n1. Atomic number \n2. Atomic mass number \n3. Name \n4. Symbol \n Enter choice:");
@@ -195,7 +195,7 @@ public class Main {
 					default:System.out.println("Enter valid value.");
 				}
 
-		}
+		}while(x.compareTo("0") > 0);
 	}
 
   public static void main(String[] args){
@@ -205,7 +205,7 @@ public class Main {
 	String s="";
 	int ch=1,n,n1;
 	float m;
-	while(ch!=0){
+	do{
 		try {
 			System.out.println("\t\t\t ________________________________________________________");
 			System.out.println("\t\t\t|                                                        |");
@@ -254,7 +254,7 @@ public class Main {
 			System.out.println("Enter valid value.");
 		}
 
-	}
+	}while(x.compareTo("0") > 0);
   }
 
 }
