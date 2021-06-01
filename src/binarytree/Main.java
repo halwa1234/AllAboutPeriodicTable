@@ -1,4 +1,5 @@
 package binarytree;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -18,8 +19,8 @@ public class Main {
 	static void viewelements() {
 		int x=1;
 		while (x!=0) {
-			System.out.print("\n1. View elements by name \2 View elements by atomic number \nEnter your choice");
 			try {
+				System.out.print("\n0. Go back \n1. View elements by name \n2. View elements by atomic number \nEnter your choice");
 				x=sc.nextInt();
 				switch(x) {
 					case 0: System.out.println("Going back");
@@ -31,10 +32,11 @@ public class Main {
 					default: System.out.println("Enter valid value.");
 				}
 			}
-			catch(IllegalStateException E){
+			catch(InputMismatchException E){
 				System.out.println("Enter valid value.");
+				x=1;
 			}
-			
+					
 		}
 	}
 	
@@ -74,7 +76,7 @@ public class Main {
 				default:System.out.println("Enter correct choice");
 				}
 			}
-			catch(IllegalStateException E) {
+			catch(InputMismatchException E) {
 				System.out.println("Enter valid value.");
 			}
 		}
@@ -109,7 +111,7 @@ public class Main {
 					System.out.println("Do you want to continue ? \n Enter 1 for yes \n Enter 0 for no ");
 					x=sc.nextInt();
 				}
-				catch(IllegalStateException E){
+				catch(InputMismatchException E){
 					System.out.println("Enter valid value.");
 				}
 				
@@ -139,7 +141,7 @@ public class Main {
 									System.out.println("\nElement with this atomic number does not exist.");
 								}
 							}
-							catch(IllegalStateException E) {
+							catch(InputMismatchException E) {
 								System.out.println("\nEnter valid value.");
 								check=1;
 							}
@@ -155,7 +157,7 @@ public class Main {
 									System.out.println("\nElement with this atomic mass does not exist.");
 								}
 							}
-							catch(IllegalStateException E) {
+							catch(InputMismatchException E) {
 								System.out.println("\nEnter valid value.");
 								check=1;
 							}
@@ -171,7 +173,7 @@ public class Main {
 									System.out.println("\nElement with this name does not exist.");
 								}
 							}
-							catch(IllegalStateException E) {
+							catch(InputMismatchException E) {
 								System.out.println("\nEnter valid value.");
 								check=1;
 							}
@@ -187,7 +189,7 @@ public class Main {
 									System.out.println("\nElement with this atomic symbol does not exist.");
 								}
 							}
-							catch(IllegalStateException E) {
+							catch(InputMismatchException E) {
 								System.out.println("\nEnter valid value.");
 								check=1;
 							}
@@ -195,7 +197,7 @@ public class Main {
 					default:System.out.println("Enter valid value.");
 				}
 			}
-			catch(IllegalStateException E) {
+			catch(InputMismatchException E) {
 				System.out.println("Enter valid value.");
 			}
 		}
@@ -209,27 +211,32 @@ public class Main {
 	int ch=1,n,n1;
 	float m;
 	while(ch!=0){
-		System.out.println("**********MENU**************");
-		System.out.println(" 1. View all elements \n 2. View elements by block \n 3. View elements by group \n 4. View information of particular element \n 5. Play Quiz \n 0.Exit");
-		System.out.println("Enter your choice : ");
-		ch=sc.nextInt();
-		int sch=0;
-		switch(ch){
-			case 0:System.out.println("\n\nExiting...");
-					System.exit(0);
-			case 1: viewelements();
+		try {
+			System.out.println("**********MENU**************");
+			System.out.println(" 1. View all elements \n 2. View elements by block \n 3. View elements by group \n 4. View information of particular element \n 5. Play Quiz \n 0.Exit");
+			System.out.println("Enter your choice : ");
+			ch=sc.nextInt();
+			int sch=0;
+			switch(ch){
+				case 0:System.out.println("\n\nExiting...");
+						System.exit(0);
+				case 1: viewelements();
+						break;
+				case 2:viewgroup();
+						break;
+			
+				case  3 :viewBlock();
+					        break;
+				case 4: search();
+						break;
+				case 5://quiz
 					break;
-			case 2:viewgroup();
-					break;
-		
-			case  3 :viewBlock();
-				        break;
-			case 4: search();
-					break;
-			case 5://quiz
-				break;
-			default:System.out.println("Enter correct choice");
+				default:System.out.println("Enter correct choice");
+			}
+		}catch(InputMismatchException E) {
+			System.out.println("Enter valid value.");
 		}
+		
 	}
   }
 
