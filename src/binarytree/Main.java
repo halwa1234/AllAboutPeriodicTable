@@ -203,9 +203,30 @@ public class Main {
 	float m;
 	while(ch!=0){
 		try {
-			System.out.println("**********MENU**************");
-			System.out.println(" 1. View all elements \n 2. View elements by block \n 3. View elements by group \n 4. View information of particular element \n 5. Play Quiz \n 0.Exit");
-			System.out.println("Enter your choice : ");
+			System.out.println("\t\t\t ________________________________________________________");
+			System.out.println("\t\t\t|                                                        |");
+			System.out.println("\t\t\t|               ALL ABOUT PERIODIC TABLE                 |");
+			System.out.println("\t\t\t|________________________________________________________|");
+			System.out.println("\n\t\t\tGet Everything you want about Periodic table in easy way !");
+			System.out.println("\t__________________________________________________________________________________________________");
+			
+			System.out.println("\n");
+			System.out.println("\t\t|----------------------------------------------------------------------------|");
+			System.out.println("\t\t|                                 MENU                                       |");
+			System.out.println("\t\t|----------------------------------------------------------------------------|");
+			System.out.println("\t\t|  1. |       View all Elements                                              |");
+			System.out.println("\t\t|----------------------------------------------------------------------------|");
+			System.out.println("\t\t|  2. |       View Elements By Block                                         |");
+			System.out.println("\t\t|----------------------------------------------------------------------------|");
+			System.out.println("\t\t|  3. |       View Elements By Group                                         |");
+			System.out.println("\t\t|----------------------------------------------------------------------------|");
+			System.out.println("\t\t|  4. |       View Information of Particular Element                         |");
+			System.out.println("\t\t|----------------------------------------------------------------------------|");
+			//System.out.println("**********MENU**************");
+			//System.out.println(" 1. View all elements \n 2. View elements by block \n 3. View elements by group \n 4. View information of particular element \n 5. Play Quiz \n 0.Exit");
+			System.out.println("\n\t__________________________________________________________________________________________________\n");
+			System.out.print("\n\t\tEnter your choice : ");
+			
 			ch=sc.nextInt();
 			int sch=0;
 			switch(ch){
