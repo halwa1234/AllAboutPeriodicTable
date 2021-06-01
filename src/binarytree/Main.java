@@ -38,6 +38,84 @@ public class Main {
 		}
 	}
 	
+	static void viewgroup() {
+		int x=1;
+		while(x!=0) {
+			System.out.println("Enter choice:\n0.Go back \n1.Alkali Metal \n2.Alkali Earth Metal \n3.Non-Metal \n4.Metal \n5.Halogen \n6.Noble Gas \n7.Transition Metal \n8.Rare Earth metal");
+			try {
+				x=sc.nextInt();
+				switch(x) {
+				case 0:System.out.println("Going back");
+					   break;
+				case 1:System.out.println("Alkali group elements");
+					treename.displayGroup("Alkali",treename.gethead());
+					   break;
+				case 2:System.out.println("Alkali Earth Metal group elements");
+					treename.displayGroup("Alkali Earth Metal",treename.gethead());
+					   break;
+				case 3:System.out.println("Non-Metal group elements");
+					treename.displayGroup("Non-Metal",treename.gethead());
+					   break;
+				case 4:System.out.println("Metal group elements");
+					treename.displayGroup("Metal",treename.gethead());
+					   break;
+				case 5:System.out.println("Halogen group elements");
+					treename.displayGroup("Halogen",treename.gethead());
+					   break;
+				case 6:System.out.println("Noble Gas group elements");
+					treename.displayGroup("Noble Gas",treename.gethead());
+					   break;
+				case 7:System.out.println("Transition Metal group elements");
+					treename.displayGroup("Transition Metal",treename.gethead());
+					   break;
+				case 8:System.out.println("Rare Earth group elements");
+					treename.displayGroup("Rare Earth",treename.gethead());
+					   break;
+				default:System.out.println("Enter correct choice");
+				}
+			}
+			catch(IllegalStateException E) {
+				System.out.println("Enter valid value.");
+			}
+		}
+	}
+	
+	static void viewBlock()
+	{
+		
+			int x=1;
+			while(x!=0){
+				System.out.println("\n1. s - block \n 2. p - block \n 3. d - block \n 4. f - block ");
+				try {
+					x=sc.nextInt();
+					switch(x) {
+						case 1: System.out.println(" s - block  Elements : ");
+	                            treename.displayBlock("s",treename.gethead());
+						break;
+
+						case 2: System.out.println(" p - block	 Elements :");
+							  treename.displayBlock("p",treename.gethead());
+						                       break;
+						case 3: System.out.println(" d - block Elements :");
+							  treename.displayBlock("d",treename.gethead());
+						break;
+
+	                                                           case 4:System.out.println(" f - block Elements :");
+							  treename.displayBlock("f",treename.gethead());
+	                                                           break;
+
+						default: System.out.println("Enter valid value.");
+					}
+					System.out.println("Do you want to continue ? \n Enter 1 for yes \n Enter 0 for no ");
+					x=sc.nextInt();
+				}
+				catch(IllegalStateException E){
+					System.out.println("Enter valid value.");
+				}
+				
+			}
+	}
+	
 	static void search() {
 		int x=1;
 		int check=0;
@@ -141,15 +219,11 @@ public class Main {
 					System.exit(0);
 			case 1: viewelements();
 					break;
-			case 2:System.out.println("Enter block of elements to be displayed 's,p,d,f':");
-					s=sc.nextLine();
-					element.displayBlock(s,element.head);
+			case 2:viewgroup();
 					break;
 		
-			case  3 :   System.out.println("Enter the group name\n 0.Exit \n 1.Alkali metal \n 2.Alkali Earth Metal \n 3.Transition Metal \n 4.Metal \n 5.Non-metal \n 6.Noble Gas \n 7.Halogen  \n 8.Rare Earth : ");
-				   s=sc.nextLine();
-				   element.displayGroup(s,element.head);
-				   break;
+			case  3 :viewBlock();
+				        break;
 			case 4: search();
 					break;
 			case 5://quiz
