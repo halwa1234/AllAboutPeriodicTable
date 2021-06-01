@@ -52,7 +52,7 @@ public class BT {
 	//  }
 	  public int atmassSearch(Element n,float d) {
 		  if(n==null || n.atomicMass==d)
-			  return n.atominNo;
+			  return n.atomicNo;
 		  if(n.atomicMass<d)
 			  return atmassSearch(n.right,d);
 		  return atmassSearch(n.left,d);
