@@ -1,6 +1,6 @@
 package binarytree;
 import java.util.Scanner;
-
+import java.lang.Math;
 public class BTnew {
 	Element head;
 
@@ -128,16 +128,15 @@ public class BTnew {
 	  }
 
 	 public int atMassSearch(Element n,int d) {
-		  if(n.atomicMass==d)
-			  //System.out.println("ceil-" +Math.ceil(n.atomicMass)+ "floor-"+Math.floor(n.atomicMass));
-			  return n.atomicNo;
-		  else if(n.atomicMass<d)
+		 
+		  if((int) Math.ceil(n.atomicMass)==d || (int) Math.floor(n.atomicMass)==d) return n.atomicNo;
+		  else if(Math.floor(n.atomicMass)<d)
 			  if (n.right!=null) return atMassSearch(n.right,d);
 		  if(n.left!=null) return atMassSearch(n.left,d);
 		  return 0;
 	  }
 //################# MAIN METHOD ######################
-
+/*
 	public static void main (String[] args) {
 		FileIO special=new FileIO();
 
@@ -148,18 +147,22 @@ public class BTnew {
 		treename.automateName();
 		treenum.automateNumber();
 		System.out.println("Displaying");
+		
+		
+		treenum.display(treenum.gethead());
+		System.out.println("\n\n\n");
+		treename.display(treename.gethead());
 
-		//tree.display(tree.gethead());
 		System.out.println("\nDone.\n");
-	/*
+	
 		tree.displayGroup("Non-Metal",tree.gethead());
 		System.out.println("\nDone. Starting next\n");
 
 		tree.displayBlock("s",tree.gethead());
 
-		*/
-		//special.displaySpecial(treenum.atnumSearch(treenum.gethead(), 3));
-		//special.displaySpecial(treename.nameSearch(treename.gethead(),"Boron" ));
+		
+		//special.displaySpecial(treenum.atnumSearch(treenum.gethead(), 1));
+		//special.displaySpecial(treename.nameSearch(treename.gethead(),"Hydrogen" ));
 		//special.displaySpecial(treename.chemicalSymbolSearch(treename.gethead(),"Li" ));
 
 		special.displaySpecial(treenum.atMassSearch(treename.gethead(),1 ));
@@ -167,5 +170,5 @@ public class BTnew {
 		//special.displaySpecial(5);
 
 	}
-
+*/
 }
