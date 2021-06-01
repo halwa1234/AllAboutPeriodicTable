@@ -90,6 +90,7 @@ public class BTnew {
 			     return rh;
 		    }
 	}
+			
 	int balance(Element root) //get balance factor
 	{
 		int bf,lh,rh;
