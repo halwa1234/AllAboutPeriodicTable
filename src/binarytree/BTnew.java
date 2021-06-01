@@ -33,7 +33,7 @@ public class BTnew {
 		}
 		System.out.println("Created!!");
 	}
-	void createByAtomicNo(Element falsehead, Element now) {
+	/*void createByAtomicNo(Element falsehead, Element now) {
 		if (falsehead==null) head=now;
 		else if(falsehead.atomicNo<now.atomicNo) {
 			if (falsehead.right==null) falsehead.right=now;
@@ -43,7 +43,7 @@ public class BTnew {
 			if (falsehead.left==null) falsehead.left=now;
 			else createByAtomicNo(falsehead.left,now);
 		}
-	}
+	}*/
 	void createByName(Element now) {
 		head=insert(head,now);
 	}
@@ -197,7 +197,54 @@ public class BTnew {
 		return(root);
 
 	}
-	
+	public Element insertAtnum(Element root,Element temp)     //insert
+	{                       
+		  if (root==null) 
+			return temp;
+		    if (temp.atomicNo<root.atomicNo) 
+		     {
+			      root.left=insert(root.left,temp);
+			      int bal=balance(root);
+			      if(bal==2||bal==-2) //tree is unbalanced
+			      {
+				    if(temp.atomicNo<root.left.atomicNo) 
+				      {
+					     root=LL(root) ;
+					    // System.out.println("LL applied");
+				      }
+				    else 
+				     {
+					root=LR(root);
+					//System.out.println("LR applied");
+				      }
+			      }
+		     }
+		    else
+		     {
+			     root.right=insert(root.right,temp);//otherwise insert into right of root
+			     int bal = balance(root);
+			     if(bal==2||bal==-2)//tree is unbalanced
+			         {
+				       if(temp.atomicNo>root.right.atomicNo)
+				         {
+					       root=RR(root);//call RR
+					      // System.out.println("RR applied");
+				         }
+				       else
+				         {
+					       root=RL(root);
+					      // System.out.println("RL applied");
+				         }
+			         }
+		      }
+		root.h = height(root);
+		return(root);
+
+	}
+
+	void createBynum(Element now) {
+		head=insert(head,now);
+	}
 	//search by atomic number
 
 
