@@ -46,7 +46,7 @@ public class BTnew {
 	}
 	void createByName(Element falsehead, Element now) {
 		if (head==null)	head=now;
-		else if(falsehead.name.compareTo(head.name)>0) {
+		else if(falsehead.name.compareTo(now.name)<0) {
 			if (falsehead.right==null) falsehead.right=now;
 			else createByName(falsehead.right,now);
 		}
@@ -60,46 +60,25 @@ public class BTnew {
 
 
 
-//################# SEARCHING ELEMENTS ######################
-	/*void display(Element falsehead){
+//################# DISPLAYING ELEMENTS ######################
+	void display(Element falsehead){
 		if (falsehead.left!=null) display(falsehead.left);
 		falsehead.display();
 		System.out.println("");
 		if (falsehead.right!=null) display(falsehead.right);
-<<<<<<< Updated upstream
-
-	}*/
-	void display(Element falsehead){
-	if (falsehead.left!=null) display(falsehead.left);
-	falsehead.display();
-	System.out.println("..............................................................................................................");
-	System.out.println("Name: "+falsehead.name+"\t"+"Chemical Symbol: "+falsehead.chemicalSymbol+"\t"+"\n"+"Block: "+falsehead.block+"\t"+"Group: "+falsehead.group+"\n"+"Atomic number: "+falsehead.atomicNo+"\t"+"Atomic mass number"+falsehead.atomicMass);
-	System.out.println("..............................................................................................................");
-	if (falsehead.right!=null) display(falsehead.right);
-
-}
-
-=======
 	}
 	/*
 	void display(Element falsehead){
-		if (falsehead.left==null) {
-			falsehead.display();
-			System.out.println("");
-			if (falsehead.right!=null) display(falsehead.right);
-			
-		}
-		else {
-			display(falsehead.left);
-			falsehead.display();
-			System.out.println("");
-			if (falsehead.right!=null) display(falsehead.right);
-		}
-		
-		
+		if (falsehead.left!=null) display(falsehead.left);
+		falsehead.display();
+		System.out.println("..............................................................................................................");
+		System.out.println("Name: "+falsehead.name+"\t"+"Chemical Symbol: "+falsehead.chemicalSymbol+"\t"+"\n"+"Block: "+falsehead.block+"\t"+"Group: "+falsehead.group+"\n"+"Atomic number: "+falsehead.atomicNo+"\t"+"Atomic mass number"+falsehead.atomicMass);
+		System.out.println("..............................................................................................................");
+		if (falsehead.right!=null) display(falsehead.right);
+
 	}
-	*/
->>>>>>> Stashed changes
+*/
+
 	 void displayGroup(String g, Element falsehead) {
 		if (falsehead.left!=null) displayGroup(g,falsehead.left);
 		if (falsehead.group.compareTo(g)==0) falsehead.display();
@@ -120,21 +99,57 @@ public class BTnew {
 			if (falsehead.right!=null) displayElement(i,falsehead.right);
 	}
 
+//################# SEARCHING ELEMENTS ######################
+	 public int atnumSearch(Element n,int d) {
+		  if(n.atomicNo==d)
+			  return n.atomicNo;
+		  else if(n.atomicNo<d)
+			  if (n.right!=null) return atnumSearch(n.right,d);
+		  if(n.left!=null) return atnumSearch(n.left,d);
+		  return 0;
+	  }
+	 
+	 public int nameSearch(Element n,String d) {
+		  if(n.name.compareTo(d)==0)
+			  return n.atomicNo;
+		  else if(n.name.compareTo(d)<0)
+			  if (n.right!=null) return nameSearch(n.right,d);
+		  if(n.left!=null) return nameSearch(n.left,d);
+		  return 0;
+	  }
+	 
+	 public int chemicalSymbolSearch(Element n,String d) {
+		  if(n.chemicalSymbol.compareTo(d)==0)
+			  return n.atomicNo;
+		  else if(n.chemicalSymbol.compareTo(d)<0)
+			  if (n.right!=null) return chemicalSymbolSearch(n.right,d);
+		  if(n.left!=null) return chemicalSymbolSearch(n.left,d);
+		  return 0;
+	  }
 
-
-
+	 public int atMassSearch(Element n,int d) {
+		  if(n.atomicMass==d)
+			  //System.out.println("ceil-" +Math.ceil(n.atomicMass)+ "floor-"+Math.floor(n.atomicMass));
+			  return n.atomicNo;
+		  else if(n.atomicMass<d)
+			  if (n.right!=null) return atMassSearch(n.right,d);
+		  if(n.left!=null) return atMassSearch(n.left,d);
+		  return 0;
+	  }
 //################# MAIN METHOD ######################
 
 	public static void main (String[] args) {
 		FileIO special=new FileIO();
 
-		BTnew tree=new BTnew();
+		BTnew treename=new BTnew();
+		BTnew treenum=new BTnew();
 		System.out.println("Automating");
 
-		tree.automateName();
+		treename.automateName();
+		treenum.automateNumber();
 		System.out.println("Displaying");
 
-		tree.display(tree.gethead());
+		//tree.display(tree.gethead());
 		System.out.println("\nDone.\n");
 	/*
 		tree.displayGroup("Non-Metal",tree.gethead());
@@ -143,9 +158,12 @@ public class BTnew {
 		tree.displayBlock("s",tree.gethead());
 
 		*/
-		//special.displaySpecial(tree.atnumSearch(tree.gethead(), 3));
-		special.displaySpecial(tree.nameSearch(tree.gethead(),"Lithium" ));
+		//special.displaySpecial(treenum.atnumSearch(treenum.gethead(), 3));
+		//special.displaySpecial(treename.nameSearch(treename.gethead(),"Boron" ));
+		//special.displaySpecial(treename.chemicalSymbolSearch(treename.gethead(),"Li" ));
 
+		special.displaySpecial(treenum.atMassSearch(treename.gethead(),1 ));
+		special.displaySpecial(treenum.atMassSearch(treename.gethead(),7 ));
 		//special.displaySpecial(5);
 
 	}
