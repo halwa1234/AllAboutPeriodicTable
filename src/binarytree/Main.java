@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	static Scanner sc=new Scanner(System.in);
-	FileIO special=new FileIO();
+	static FileIO special=new FileIO();
 
 	static BTnew treename=new BTnew();
 	static BTnew treenum=new BTnew();
@@ -38,7 +38,90 @@ public class Main {
 		}
 	}
 	
-	
+	static void search() {
+		int x=1;
+		int check=0;
+		while(x!=0) {
+			try {
+				if (check==0) {
+					System.out.println("\nSEARCH BY-\n0. Go back \n1. Atomic number \n2. Atomic mass number \n3. Name \n4. Symbol \n Enter choice:");
+					x=sc.nextInt();
+				}
+				switch(x){
+					case 0: System.out.println("\nGoing back");
+							break;
+					case 1:try {
+								System.out.println("\nEnter atomic number");
+								int n=sc.nextInt();
+								check=0;
+								int y=treenum.atnumSearch(treenum.gethead(),n);
+								if(y!=0) special.displaySpecial(y);
+								else {
+									check=1;
+									System.out.println("\nElement with this atomic number does not exist.");
+								}
+							}
+							catch(IllegalStateException E) {
+								System.out.println("\nEnter valid value.");
+								check=1;
+							}
+							break;
+					case 2:try {
+								System.out.println("\nEnter atomic mass");
+								int n=sc.nextInt();
+								check=0;
+								int y=treenum.atMassSearch(treenum.gethead(),n);
+								if(y!=0) special.displaySpecial(y);
+								else {
+									check=1;
+									System.out.println("\nElement with this atomic mass does not exist.");
+								}
+							}
+							catch(IllegalStateException E) {
+								System.out.println("\nEnter valid value.");
+								check=1;
+							}
+							break;
+					case 3:try {
+								System.out.print("\nEnter atomic name:");
+								String n=sc.next();
+								check=0;
+								int y=treename.nameSearch(treenum.gethead(),n);
+								if(y!=0) special.displaySpecial(y);
+								else {
+									check=1;
+									System.out.println("\nElement with this name does not exist.");
+								}
+							}
+							catch(IllegalStateException E) {
+								System.out.println("\nEnter valid value.");
+								check=1;
+							}
+							break;
+					case 4:try {
+								System.out.print("\nEnter atomic symbol:");
+								String n=sc.next();
+								check=0;
+								int y=treename.chemicalSymbolSearch(treenum.gethead(),n);
+								if(y!=0) special.displaySpecial(y);
+								else {
+									check=1;
+									System.out.println("\nElement with this atomic symbol does not exist.");
+								}
+							}
+							catch(IllegalStateException E) {
+								System.out.println("\nEnter valid value.");
+								check=1;
+							}
+							break;
+					default:System.out.println("Enter valid value.");
+				}
+			}
+			catch(IllegalStateException E) {
+				System.out.println("Enter valid value.");
+			}
+		}
+	}
 	
   public static void main(String[] args){
 	
@@ -67,32 +150,8 @@ public class Main {
 				   s=sc.nextLine();
 				   element.displayGroup(s,element.head);
 				   break;
-			case 4:System.out.println("Enter search choice\n1Atomic number \n2.Atomic mass number \n3.Name \n4.Symbol");
-				sch=sc.nextInt();
-				switch(sch){
-					case 1:System.out.println("Enter atomic number");
-						/*n=sc.nextInt();
-						n1=atnumSearch(element.head,n);
-						displayElement(n1,element.head);*/
-						break;
-					case 2:System.out.println("Enter atomic mass number");
-						/*m=sc.nextInt();
-						n1=atmassSearch(element.head,m);
-						displayElement(n1,element.head);*/
-						break;
-					case 3:System.out.println("Enter name");
-						/*s=sc.nextLine();
-						n1=nameSearch(element.head,s);
-						displayElement(n1,element.head);*/
-						break;
-					case 4:System.out.println("Enter symbol");
-						/*s=sc.nextLine();
-						n1=chemicalSymbolSearch(element.head,s);
-						displayElement(n1,element.head);*/
-						break;
-					default:System.out.println("Enter correct choice");
-				}
-				break;
+			case 4: search();
+					break;
 			case 5://quiz
 				break;
 			default:System.out.println("Enter correct choice");
