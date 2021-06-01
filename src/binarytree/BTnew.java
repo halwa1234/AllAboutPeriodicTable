@@ -66,6 +66,7 @@ public class BTnew {
 		falsehead.display();
 		System.out.println("");
 		if (falsehead.right!=null) display(falsehead.right);
+<<<<<<< Updated upstream
 
 	}*/
 	void display(Element falsehead){
@@ -78,6 +79,27 @@ public class BTnew {
 
 }
 
+=======
+	}
+	/*
+	void display(Element falsehead){
+		if (falsehead.left==null) {
+			falsehead.display();
+			System.out.println("");
+			if (falsehead.right!=null) display(falsehead.right);
+			
+		}
+		else {
+			display(falsehead.left);
+			falsehead.display();
+			System.out.println("");
+			if (falsehead.right!=null) display(falsehead.right);
+		}
+		
+		
+	}
+	*/
+>>>>>>> Stashed changes
 	 void displayGroup(String g, Element falsehead) {
 		if (falsehead.left!=null) displayGroup(g,falsehead.left);
 		if (falsehead.group.compareTo(g)==0) falsehead.display();
