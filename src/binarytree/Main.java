@@ -18,6 +18,11 @@ public class Main {
 	
 	static void viewelements() {
 
+				String x;
+		while (x!="0") {
+			System.out.print("\n1. View elements by name \2 View elements by atomic number \nEnter your choice");
+			
+				x=sc.next();
 				switch(x) {
 					case "0": System.out.println("Going back");
 							break;
@@ -27,7 +32,10 @@ public class Main {
 							break;
 					default: System.out.println("Enter valid value.");
 				}
-
+			
+			
+			
+			
 		}
 	}
 	
