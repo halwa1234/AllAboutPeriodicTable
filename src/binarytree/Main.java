@@ -17,104 +17,120 @@ public class Main {
 
 	
 	static void viewelements() {
-
+		int x=1;
+		while (x!=0) {
+			try {
+				System.out.print("\n0. Go back \n1. View elements by name \n2. View elements by atomic number \nEnter your choice");
+				x=sc.nextInt();
 				switch(x) {
-					case "0": System.out.println("Going back");
+					case 0: System.out.println("Going back");
 							break;
-					case "1": treename.display(treename.gethead());
+					case 1: treename.display(treename.gethead());
 							break;
-					case "2": treenum.display(treenum.gethead());
+					case 2: treenum.display(treenum.gethead());
 							break;
 					default: System.out.println("Enter valid value.");
 				}
-
+			}
+			catch(InputMismatchException E){
+				System.out.println("Enter valid value.");
+				x=1;
+			}
+					
 		}
 	}
 	
 	static void viewgroup() {
-		String x;
-		while(x!="0") {
+		int x=1;
+		while(x!=0) {
 			System.out.println("Enter choice:\n0.Go back \n1.Alkali Metal \n2.Alkali Earth Metal \n3.Non-Metal \n4.Metal \n5.Halogen \n6.Noble Gas \n7.Transition Metal \n8.Rare Earth metal");
-			
-				x=sc.next();
+			try {
+				x=sc.nextInt();
 				switch(x) {
-				case "0":System.out.println("Going back");
+				case 0:System.out.println("Going back");
 					   break;
-				case "1":System.out.println("Alkali group elements");
+				case 1:System.out.println("Alkali group elements");
 					treename.displayGroup("Alkali",treename.gethead());
 					   break;
-				case "2":System.out.println("Alkali Earth Metal group elements");
+				case 2:System.out.println("Alkali Earth Metal group elements");
 					treename.displayGroup("Alkali Earth Metal",treename.gethead());
 					   break;
-				case "3":System.out.println("Non-Metal group elements");
+				case 3:System.out.println("Non-Metal group elements");
 					treename.displayGroup("Non-Metal",treename.gethead());
 					   break;
-				case "4":System.out.println("Metal group elements");
+				case 4:System.out.println("Metal group elements");
 					treename.displayGroup("Metal",treename.gethead());
 					   break;
-				case "5":System.out.println("Halogen group elements");
+				case 5:System.out.println("Halogen group elements");
 					treename.displayGroup("Halogen",treename.gethead());
 					   break;
-				case "6":System.out.println("Noble Gas group elements");
+				case 6:System.out.println("Noble Gas group elements");
 					treename.displayGroup("Noble Gas",treename.gethead());
 					   break;
-				case "7":System.out.println("Transition Metal group elements");
+				case 7:System.out.println("Transition Metal group elements");
 					treename.displayGroup("Transition Metal",treename.gethead());
 					   break;
-				case "8":System.out.println("Rare Earth group elements");
+				case 8:System.out.println("Rare Earth group elements");
 					treename.displayGroup("Rare Earth",treename.gethead());
 					   break;
 				default:System.out.println("Enter correct choice");
 				}
-
+			}
+			catch(InputMismatchException E) {
+				System.out.println("Enter valid value.");
+			}
 		}
 	}
 	
 	static void viewBlock()
 	{
 		
-			String x;
-			while(x!="0"){
+			int x=1;
+			while(x!=0){
 				System.out.println("\n1. s - block \n 2. p - block \n 3. d - block \n 4. f - block ");
-				
-					x=sc.next();
+				try {
+					x=sc.nextInt();
 					switch(x) {
-						case "1": System.out.println(" s - block  Elements : ");
+						case 1: System.out.println(" s - block  Elements : ");
 	                            treename.displayBlock("s",treename.gethead());
 						break;
 
-						case "2": System.out.println(" p - block	 Elements :");
+						case 2: System.out.println(" p - block	 Elements :");
 							  treename.displayBlock("p",treename.gethead());
 						                       break;
-						case "3": System.out.println(" d - block Elements :");
+						case 3: System.out.println(" d - block Elements :");
 							  treename.displayBlock("d",treename.gethead());
 						break;
 
-	                                                           case "4":System.out.println(" f - block Elements :");
+	                                                           case 4:System.out.println(" f - block Elements :");
 							  treename.displayBlock("f",treename.gethead());
 	                                                           break;
 
 						default: System.out.println("Enter valid value.");
 					}
 					System.out.println("Do you want to continue ? \n Enter 1 for yes \n Enter 0 for no ");
-
+					x=sc.nextInt();
+				}
+				catch(InputMismatchException E){
+					System.out.println("Enter valid value.");
+				}
 				
 			}
 	}
 	
 	static void search() {
-		String x;
+		int x=1;
 		int check=0;
-		while(x!="0") {
-			
+		while(x!=0) {
+			try {
 				if (check==0) {
 					System.out.println("\nSEARCH BY-\n0. Go back \n1. Atomic number \n2. Atomic mass number \n3. Name \n4. Symbol \n Enter choice:");
-					x=sc.next();
+					x=sc.nextInt();
 				}
 				switch(x){
-					case "0": System.out.println("\nGoing back");
+					case 0: System.out.println("\nGoing back");
 							break;
-					case "1":try {
+					case 1:try {
 								System.out.println("\nEnter atomic number");
 								int n=sc.nextInt();
 								check=0;
@@ -130,7 +146,7 @@ public class Main {
 								check=1;
 							}
 							break;
-					case "2":try {
+					case 2:try {
 								System.out.println("\nEnter atomic mass");
 								int n=sc.nextInt();
 								check=0;
@@ -146,7 +162,7 @@ public class Main {
 								check=1;
 							}
 							break;
-					case "3":try {
+					case 3:try {
 								System.out.print("\nEnter atomic name:");
 								String n=sc.next();
 								check=0;
@@ -162,7 +178,7 @@ public class Main {
 								check=1;
 							}
 							break;
-					case "4":try {
+					case 4:try {
 								System.out.print("\nEnter atomic symbol:");
 								String n=sc.next();
 								check=0;
@@ -180,7 +196,10 @@ public class Main {
 							break;
 					default:System.out.println("Enter valid value.");
 				}
-
+			}
+			catch(InputMismatchException E) {
+				System.out.println("Enter valid value.");
+			}
 		}
 	}
 	
