@@ -14,7 +14,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
-
 public class FileIO {
 	Workbook wb=null; 
 	Sheet property1=null;		   //getting the XSSFSheet object at given index  
@@ -66,7 +65,7 @@ public class FileIO {
 		int atomicNo=(int) IntReadCellData(i, 2);
 		
 		String crystal=StringReadCellData(i, 5);
-		String shell=StringReadCellData(i, 7);
+		
 		String orbitals=StringReadCellData(i, 8);
 		String pronounce=StringReadCellData(i, 32);
 		String nameOrigin=StringReadCellData(i, 33);
@@ -78,14 +77,27 @@ public class FileIO {
 
 		
 		
-		
-		System.out.println(name+ " ("+chemicalSymbol+")				Pronounciation-"+pronounce
-				+ "\n Group- "+group+"          Block- "+block
-				+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);
-		System.out.println("\nDescription- "+description);
+		try {
+			String shell=StringReadCellData(i, 7);
+			System.out.println(name+ " ("+chemicalSymbol+")				Pronounciation-"+pronounce
+					+ "\n Group- "+group+"          Block- "+block
+					+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);
+			System.out.println("\nDescription- "+description);
 
-		System.out.println("\nShells-  "+shell+"\nOrbitals-"+orbitals);
-		System.out.println("Name origin- "+nameOrigin);
+			System.out.println("\nShells-  "+shell+"\nOrbitals-"+orbitals);
+			System.out.println("Name origin- "+nameOrigin);
+		}
+		catch(IllegalStateException E) {
+			int shell=(int) IntReadCellData(i, 7);
+			System.out.println(name+ " ("+chemicalSymbol+")				Pronounciation-"+pronounce
+					+ "\n Group- "+group+"          Block- "+block
+					+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);
+			System.out.println("\nDescription- "+description);
+
+			System.out.println("\nShells-  "+shell+"\nOrbitals-"+orbitals);
+			System.out.println("Name origin- "+nameOrigin);
+		}
+		
 
 		try{
 			int year=(int) IntReadCellData(i,36);
