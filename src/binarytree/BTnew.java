@@ -100,7 +100,9 @@ public class BTnew {
 //################# MAIN METHOD ######################	
 	
 	public static void main (String[] args) {
-		BTnew tree=new BTnew();
+		FileIO special=new FileIO();
+		
+		/*BTnew tree=new BTnew();
 		System.out.println("Automating");
 
 		tree.automateNumber();
@@ -113,6 +115,9 @@ public class BTnew {
 		System.out.println("\nDone. Starting next\n");
 
 		tree.displayBlock("s",tree.gethead());
+		
+		*/
+		special.displaySpecial(6);
 	}
 
 }
