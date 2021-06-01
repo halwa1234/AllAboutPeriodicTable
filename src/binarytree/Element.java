@@ -8,7 +8,7 @@ package binarytree;
 
 public class Element {
 	FileIO elementlist=new FileIO();
-	
+	int h;
 	String name;
 	String chemicalSymbol;
 	String block;
@@ -25,7 +25,7 @@ public class Element {
 		chemicalSymbol="";
 		block="";
 		group="";
-		
+		h=0;
 		atomicMass=0;
 		atomicNo=0;
 		
