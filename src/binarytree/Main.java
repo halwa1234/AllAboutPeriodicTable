@@ -122,9 +122,11 @@ public class Main {
 				switch(x){
 					case "0": System.out.println("\nGoing back");
 							break;
-					case "1":try {
+					case "1":
 								System.out.println("\nEnter atomic number");
-								int n=sc.nextInt();
+								String ns;
+								ns=sc.next();
+								int n=Integer.parseInt(ns);
 								check=0;
 								int y=treenum.atnumSearch(treenum.gethead(),n);
 								if(y!=0) special.displaySpecial(y);
@@ -132,15 +134,13 @@ public class Main {
 									check=1;
 									System.out.println("\nElement with this atomic number does not exist.");
 								}
-							}
-							catch(InputMismatchException E) {
-								System.out.println("\nEnter valid value.");
-								check=1;
-							}
+							
+							
 							break;
-					case "2":try {
+					case "2":
 								System.out.println("\nEnter atomic mass");
-								int n=sc.nextInt();
+								String ms=sc.nextInt();
+								int n=Integer.parseInt(ms);
 								check=0;
 								int y=treenum.atMassSearch(treenum.gethead(),n);
 								if(y!=0) special.displaySpecial(y);
@@ -148,13 +148,10 @@ public class Main {
 									check=1;
 									System.out.println("\nElement with this atomic mass does not exist.");
 								}
-							}
-							catch(InputMismatchException E) {
-								System.out.println("\nEnter valid value.");
-								check=1;
-							}
+							
+							
 							break;
-					case "3":try {
+					case "3":
 								System.out.print("\nEnter atomic name:");
 								String n=sc.next();
 								check=0;
@@ -164,13 +161,10 @@ public class Main {
 									check=1;
 									System.out.println("\nElement with this name does not exist.");
 								}
-							}
-							catch(InputMismatchException E) {
-								System.out.println("\nEnter valid value.");
-								check=1;
-							}
+							
+							
 							break;
-					case "4":try {
+					case "4":
 								System.out.print("\nEnter atomic symbol:");
 								String n=sc.next();
 								check=0;
@@ -180,11 +174,8 @@ public class Main {
 									check=1;
 									System.out.println("\nElement with this atomic symbol does not exist.");
 								}
-							}
-							catch(InputMismatchException E) {
-								System.out.println("\nEnter valid value.");
-								check=1;
-							}
+							
+							
 							break;
 					default:System.out.println("Enter valid value.");
 				}
@@ -197,34 +188,33 @@ public class Main {
 	initialize();
 	
 	String s;
-	int ch=1,n,n1;
+	int n,n1;
+	  String ch;
 	float m;
-	while(ch!=0){
-		try {
+	while(ch!="0"){
+		
 			System.out.println("**********MENU**************");
 			System.out.println(" 1. View all elements \n 2. View elements by block \n 3. View elements by group \n 4. View information of particular element \n 5. Play Quiz \n 0.Exit");
 			System.out.println("Enter your choice : ");
-			ch=sc.nextInt();
+			ch=sc.next();
 			int sch=0;
 			switch(ch){
-				case 0:System.out.println("\n\nExiting...");
+				case "0":System.out.println("\n\nExiting...");
 						System.exit(0);
-				case 1: viewelements();
+				case "1": viewelements();
 						break;
-				case 2:viewgroup();
+				case "2":viewgroup();
 						break;
 			
-				case  3 :viewBlock();
+				case  "3" :viewBlock();
 					        break;
-				case 4: search();
+				case "4": search();
 						break;
-				case 5://quiz
+				case "5"://quiz
 					break;
 				default:System.out.println("Enter correct choice");
 			}
-		}catch(InputMismatchException E) {
-			System.out.println("Enter valid value.");
-		}
+		
 		
 	}
   }
