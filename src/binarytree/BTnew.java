@@ -28,7 +28,7 @@ public class BTnew {
 		Element n;
 		while(i<10) {
 			n=new Element(i);
-			createByName(head, n);
+			createByName(n);
 			i++;
 		}
 		System.out.println("Created!!");
@@ -44,7 +44,10 @@ public class BTnew {
 			else createByAtomicNo(falsehead.left,now);
 		}
 	}
-	void createByName(Element falsehead, Element now) {
+	void createByName(Element now) {
+		head=insert(head,now);
+	}
+	/*void createByName(Element falsehead, Element now) {
 		if (head==null)	head=now;
 		else if(falsehead.name.compareTo(now.name)<0) {
 			if (falsehead.right==null) falsehead.right=now;
@@ -54,7 +57,146 @@ public class BTnew {
 			if (falsehead.left==null) falsehead.left=now;
 			else createByName(falsehead.left,now);
 		}
+      }*/
+			int height (Element root)       //tree height     
+	    {
+		      int lh,rh;             
+		      if(root==null)
+		      {
+			      return 0;
+		      }
+		      if(root.left==null)
+		      {
+			       lh=0;
+		      }
+		     else
+		      {
+			       lh = 1+height(root.left);
+		      }
+		     if(root.right==null)
+		     {
+			      rh=0;
+		     }
+		     else
+		     {
+			      rh = 1+height(root.right);
+		     }
+		     if(lh>rh)
+		     {
+			      return lh;
+		     }
+		    else
+		    {
+			     return rh;
+		    }
 	}
+	int balance(Element root) //get balance factor
+	{
+		int bf,lh,rh;
+		if(root==null)
+		{
+			return 0;
+		}
+		if(root.left==null)
+		{
+			lh=0;
+		}
+		else
+		{
+			lh = 1+height(root.left);
+		}
+		if(root.right==null)
+		{
+			rh=0;
+		}
+		else
+		{
+			rh = 1+height(root.right);
+		}
+		bf=lh-rh;
+		
+		return bf;
+	}
+
+	public Element RR(Element root)//left rotation         
+	{
+
+	         Element temp=root.right;
+	         root.right=temp.left;
+	         temp.left=root;
+	         temp.h=height(temp);
+	         root.h=height(root);
+	         return temp;
+	}
+	public Element RL(Element root)
+	{
+	     	root.right=LL(root.right);
+	     	root=RR(root);
+	     	return root;
+	}
+	public Element LL(Element root)//right rotation         
+	{      
+	       Element temp=root.left; 
+	       root.left=temp.right;
+	       temp.right=root;
+	       temp.h=height(temp);
+	       root.h=height(root);
+	       return temp;
+	}
+
+	public Element LR(Element root)
+	{     
+		    root.left=RR(root.left);//call RR
+	     root=LL(root);//call LL
+	     return root;
+	}
+
+
+	public Element insert(Element root,Element temp)     //insert
+	{                       
+		  if (root==null) 
+			return temp;
+		    if ((temp.name).compareTo(root.name)<0) 
+		     {
+			      root.left=insert(root.left,temp);
+			      int bal=balance(root);
+			      if(bal==2||bal==-2) //tree is unbalanced
+			      {
+				    if((temp.name).compareTo(root.left.name)<0) 
+				      {
+					     root=LL(root) ;
+					    // System.out.println("LL applied");
+				      }
+				    else 
+				     {
+					root=LR(root);
+					//System.out.println("LR applied");
+				      }
+			      }
+		     }
+		    else
+		     {
+			     root.right=insert(root.right,temp);//otherwise insert into right of root
+			     int bal = balance(root);
+			     if(bal==2||bal==-2)//tree is unbalanced
+			         {
+				       if((temp.name).compareTo(root.right.name)>0)
+				         {
+					       root=RR(root);//call RR
+					      // System.out.println("RR applied");
+				         }
+				       else
+				         {
+					       root=RL(root);
+					      // System.out.println("RL applied");
+				         }
+			         }
+		      }
+		root.h = height(root);
+		return(root);
+
+	}
+	
 	//search by atomic number
 
 
