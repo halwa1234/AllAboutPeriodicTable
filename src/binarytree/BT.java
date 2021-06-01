@@ -36,46 +36,45 @@ public class BT {
 		else createByAtomicNo(falsehead.left,now);
 	}
 	//search by atomic number
-	 public Element atnumSearch(int d) {
-		 return atnumSearch(head,d);
-		  
-	  }
-	  private Element atnumSearch(Element n,int d) {
+	// public Element atnumSearch(int d) {
+	//	 return atnumSearch(head,d);	  
+	//  }
+	  public int atnumSearch(Element n,int d) {
 		  if(n==null || n.atomicNo==d)
-			  return n;
+			  return n.atomicNo;
 		  if(n.atomicNo<d)
 			  return atnumSearch(n.right,d);
 		  return atnumSearch(n.left,d);
 	  }
 	  //search by atomic mass number
-	  public Element atmassSearch(float d) {
-		  return atmassSearch(head,d);
-	  }
-	  private Element atmassSearch(Element n,float d) {
+	 // public Element atmassSearch(float d) {
+	//	  return atmassSearch(head,d);
+	//  }
+	  public int atmassSearch(Element n,float d) {
 		  if(n==null || n.atomicMass==d)
-			  return n;
+			  return n.atominNo;
 		  if(n.atomicMass<d)
 			  return atmassSearch(n.right,d);
 		  return atmassSearch(n.left,d);
 	  }
 	  //search by name
-	  public Element nameSearch(String n) {
-		  return nameSearch(head,n);
-	  }
-	  private Element nameSearch(Element r,String n) {
+	 /// public Element nameSearch(String n) {
+	//	  return nameSearch(head,n);
+	 // }
+	  public int nameSearch(Element r,String n) {
 		  if(r==null || r.name.compareTo(n)==0)
-			  return r;
+			  return r.atomicNo;
 		  if(r.name.compareTo(n)<0)
 			  return nameSearch(r.right,n);
 		  return nameSearch(r.left,n);
 	  }
 	  //search by chemicalSymbol
-	  public Element chemicalSymbolSearch(String n) {
-		  return chemicalSymbolSearch(head,n);
-	  }
-	  private Element chemicalSymbolSearch(Element r,String n) {
+	 // public Element chemicalSymbolSearch(String n) {
+	//	  return chemicalSymbolSearch(head,n);
+	 // }
+	  public int chemicalSymbolSearch(Element r,String n) {
 		  if(r==null || r.chemicalSymbol.compareTo(n)==0)
-			  return r;
+			  return r.atomicNo;
 		  if(r.chemicalSymbol.compareTo(n)<0)
 			  return nameSearch(r.right,n);
 		  return nameSearch(r.left,n);
@@ -85,7 +84,7 @@ public class BT {
 		  Scanner sc=new Scanner(System.in);
 		  System.out.println("Enter the type of search:");
 		  System.out.println("1.By name\n2.By atomic number\n3.By atomic mass number\n4.By chemicalSymbol\n0.exit");
-		  int ch,n;
+		  int ch,n,cn;
 		  Element c=new Element();
 		  String s;
 		  float m;
@@ -96,33 +95,34 @@ public class BT {
 			  case 1:
 				 System.out.println("Enter name of Element:");
 				 s=sc.nextLine();
-				 c= nameSearch(s); 
+				 cn= nameSearch(c.head,s); 
 				 break;
 			  case 2:
 				  System.out.println("Enter atomic number of Element:");
 				  n=sc.nextInt();
-				  c=atnumSearch(n);
+				  cn=atnumSearch(c.head,n);
 				  break;
 			  case 3:
 				  System.out.println("Enter atomic mass number of Element:");
 				  m=sc.nextFloat();
-				  c= atmassSearch(m);
+				  cn= atmassSearch(c.head,m);
 				  break;
 			  case 4:
 				  System.out.println("Enter chemicalSymbol of Element:");
 				  s=sc.nextLine();
-				  c= chemicalSymbolSearch(s);
+				  cn= chemicalSymbolSearch(c.head,s);
 				  break;
 			  case 0:
 				  break;
 			  default :
 				  System.out.println("Enter correct choice:");
 			  }
-			  display_search(c);
+			  
+			  display_search(cn,c);
 			  System.out.println("Enter choice:");
 			  ch=sc.nextInt();
 		  }while(ch!=0);
-		  //return c;
+		  
 	  }
 	//Display by block
 	//assuming class name as Periodic
