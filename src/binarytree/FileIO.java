@@ -56,6 +56,7 @@ public class FileIO {
 	} 
 	
 	void displaySpecial(int i) {
+		
 		String name=StringReadCellData(i, 0);
 		String chemicalSymbol=StringReadCellData(i, 1);
 		String block=StringReadCellData(i, 4);
