@@ -79,51 +79,7 @@ public class BT {
 			  return nameSearch(r.right,n);
 		  return nameSearch(r.left,n);
 	  }
-	  //driver search function
-	  public void search() {
-		  Scanner sc=new Scanner(System.in);
-		  System.out.println("Enter the type of search:");
-		  System.out.println("1.By name\n2.By atomic number\n3.By atomic mass number\n4.By chemicalSymbol\n0.exit");
-		  int ch,n,cn;
-		  Element c=new Element();
-		  String s;
-		  float m;
-		  System.out.println("Enter choice:");
-		  ch=sc.nextInt();
-		  do {
-			  switch(ch) {
-			  case 1:
-				 System.out.println("Enter name of Element:");
-				 s=sc.nextLine();
-				 cn= nameSearch(c.head,s); 
-				 break;
-			  case 2:
-				  System.out.println("Enter atomic number of Element:");
-				  n=sc.nextInt();
-				  cn=atnumSearch(c.head,n);
-				  break;
-			  case 3:
-				  System.out.println("Enter atomic mass number of Element:");
-				  m=sc.nextFloat();
-				  cn= atmassSearch(c.head,m);
-				  break;
-			  case 4:
-				  System.out.println("Enter chemicalSymbol of Element:");
-				  s=sc.nextLine();
-				  cn= chemicalSymbolSearch(c.head,s);
-				  break;
-			  case 0:
-				  break;
-			  default :
-				  System.out.println("Enter correct choice:");
-			  }
-			  
-			  display_search(cn,c);
-			  System.out.println("Enter choice:");
-			  ch=sc.nextInt();
-		  }while(ch!=0);
-		  
-	  }
+	  
 	//Display by block
 	//assuming class name as Periodic
 	void display(Element head){
