@@ -9,19 +9,19 @@ public class Main {
 
 	static BTnew treename=new BTnew();
 	static BTnew treenum=new BTnew();
-	
+
 	static void initialize() {
 		treename.automateName();
 		treenum.automateNumber();
 	}
 
-	
+
 	static void viewelements() {
 
-		String x="1";
+				String x="";
 		while (x!="0") {
 			System.out.print("\n0. Go Back \n1. View elements by name \n2 View elements by atomic number \nEnter your choice");
-			
+
 				x=sc.next();
 				switch(x) {
 					case "0": System.out.println("Going back");
@@ -32,15 +32,15 @@ public class Main {
 							break;
 					default: System.out.println("Enter valid value.");
 				}
-			
+
 		}
 	}
-	
+
 	static void viewgroup() {
-		String x="1";
+		String x="";
 		while(x!="0") {
 			System.out.println("Enter choice:\n0.Go back \n1.Alkali Metal \n2.Alkali Earth Metal \n3.Non-Metal \n4.Metal \n5.Halogen \n6.Noble Gas \n7.Transition Metal \n8.Rare Earth metal");
-			
+
 				x=sc.next();
 				switch(x) {
 				case "0":System.out.println("Going back");
@@ -74,14 +74,14 @@ public class Main {
 
 		}
 	}
-	
+
 	static void viewBlock()
 	{
-		
-			String x="1";
+
+			String x="";
 			while(x!="0"){
 				System.out.println("\n1. s - block \n 2. p - block \n 3. d - block \n 4. f - block ");
-				
+
 					x=sc.next();
 					switch(x) {
 						case "1": System.out.println(" s - block  Elements : ");
@@ -103,15 +103,15 @@ public class Main {
 					}
 					System.out.println("Do you want to continue ? \n Enter 1 for yes \n Enter 0 for no ");
 
-				
+
 			}
 	}
-	
+
 	static void search() {
-		String x="1";
+		String x="";
 		int check=0;
 		while(x!="0") {
-			
+
 				if (check==0) {
 					System.out.println("\nSEARCH BY-\n0. Go back \n1. Atomic number \n2. Atomic mass number \n3. Name \n4. Symbol \n Enter choice:");
 					x=sc.next();
@@ -188,12 +188,12 @@ public class Main {
 
 		}
 	}
-	
+
   public static void main(String[] args){
-	
+
 	initialize();
-	
-	String s;
+
+	String s="";
 	int ch=1,n,n1;
 	float m;
 	while(ch!=0){
@@ -210,7 +210,7 @@ public class Main {
 						break;
 				case 2:viewgroup();
 						break;
-			
+
 				case  3 :viewBlock();
 					        break;
 				case 4: search();
@@ -222,7 +222,7 @@ public class Main {
 		}catch(InputMismatchException E) {
 			System.out.println("Enter valid value.");
 		}
-		
+
 	}
   }
 
