@@ -127,10 +127,12 @@ public class Main {
 								if(y!=0) special.displaySpecial(y);
 								else {
 									check=1;
-									System.out.println("\nElement with this atomic number does not exist.");
+										System.out.println("\nElement with this atomic number does not exist.");
+									
 								}
 							}
 							catch(InputMismatchException E) {
+								sc.next();
 								System.out.println("\nEnter valid value.");
 								check=1;
 							}
@@ -147,6 +149,7 @@ public class Main {
 								}
 							}
 							catch(InputMismatchException E) {
+								sc.next();
 								System.out.println("\nEnter valid value.");
 								check=1;
 							}
@@ -163,6 +166,7 @@ public class Main {
 								}
 							}
 							catch(InputMismatchException E) {
+								sc.next();
 								System.out.println("\nEnter valid value.");
 								check=1;
 							}
@@ -179,6 +183,7 @@ public class Main {
 								}
 							}
 							catch(InputMismatchException E) {
+								sc.next();
 								System.out.println("\nEnter valid value.");
 								check=1;
 							}
