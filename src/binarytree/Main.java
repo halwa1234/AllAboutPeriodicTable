@@ -18,7 +18,7 @@ public class Main {
 	
 	static void viewelements() {
 
-				String x;
+				String x="";
 		while (x!="0") {
 			System.out.print("\n1. View elements by name \2 View elements by atomic number \nEnter your choice");
 			
@@ -40,7 +40,7 @@ public class Main {
 	}
 	
 	static void viewgroup() {
-		String x;
+		String x="";
 		while(x!="0") {
 			System.out.println("Enter choice:\n0.Go back \n1.Alkali Metal \n2.Alkali Earth Metal \n3.Non-Metal \n4.Metal \n5.Halogen \n6.Noble Gas \n7.Transition Metal \n8.Rare Earth metal");
 			
@@ -81,7 +81,7 @@ public class Main {
 	static void viewBlock()
 	{
 		
-			String x;
+			String x="";
 			while(x!="0"){
 				System.out.println("\n1. s - block \n 2. p - block \n 3. d - block \n 4. f - block ");
 				
@@ -111,7 +111,7 @@ public class Main {
 	}
 	
 	static void search() {
-		String x;
+		String x="";
 		int check=0;
 		while(x!="0") {
 			
@@ -196,7 +196,7 @@ public class Main {
 	
 	initialize();
 	
-	String s;
+	String s="";
 	int ch=1,n,n1;
 	float m;
 	while(ch!=0){
