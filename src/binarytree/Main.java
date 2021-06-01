@@ -24,7 +24,16 @@ public class Main {
 
 				String x="";
 		while (x!="0") {
-			System.out.print("\n0. Go Back \n1. View elements by name \n2 View elements by atomic number \nEnter your choice");
+			System.out.println("\n\t\t|---------------------------------------------");
+			System.out.println("\t\t|   How you want to get the elements ?       |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|   1.  |     By Name                        |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|   2.  |     By Atomic                      |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|   0.  |     Exit                           |");
+			System.out.println("\t\t|--------------------------------------------|\n");
+			System.out.print("\t\tEnter your choice : ");
 
 				x=sc.next();
 				switch(x) {
@@ -225,6 +234,8 @@ public class Main {
 			System.out.println("\t\t|  3. |       View Elements By Group                                         |");
 			System.out.println("\t\t|----------------------------------------------------------------------------|");
 			System.out.println("\t\t|  4. |       View Information of Particular Element                         |");
+			System.out.println("\t\t|----------------------------------------------------------------------------|");
+			System.out.println("\t\t|  0. |       Exit                                                           |");
 			System.out.println("\t\t|----------------------------------------------------------------------------|");
 			//System.out.println("**********MENU**************");
 			//System.out.println(" 1. View all elements \n 2. View elements by block \n 3. View elements by group \n 4. View information of particular element \n 5. Play Quiz \n 0.Exit");
