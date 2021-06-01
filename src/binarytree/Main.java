@@ -14,7 +14,11 @@ public class Main {
 		treename.automateName();
 		treenum.automateNumber();
 	}
-
+	
+	static void clearscreen() {
+		System.out.print("\033[H\033[2J");  
+		System.out.flush();  
+	}
 
 	static void viewelements() {
 
@@ -228,6 +232,7 @@ public class Main {
 			System.out.print("\n\t\tEnter your choice : ");
 			
 			ch=sc.nextInt();
+			
 			int sch=0;
 			switch(ch){
 				case 0:System.out.println("\n\nExiting...");
