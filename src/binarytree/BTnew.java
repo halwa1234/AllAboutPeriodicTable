@@ -119,12 +119,22 @@ public class BTnew {
 	  }
 	 
 	 public int chemicalSymbolSearch(Element n,String d) {
+		 int x=0;
+		 
 		  if(n.chemicalSymbol.compareTo(d)==0)
-			  return n.atomicNo;
-		  else if(n.chemicalSymbol.compareTo(d)<0)
-			  if (n.right!=null) return chemicalSymbolSearch(n.right,d);
-		  if(n.left!=null) return chemicalSymbolSearch(n.left,d);
-		  return 0;
+		  {
+			  x=n.atomicNo; return x;
+		  }
+		  
+		  else {
+			  if (n.right!=null && x==0) {
+				   x= chemicalSymbolSearch(n.right,d);
+			  }
+			  if (n.left!=null && x==0) {
+				   x= chemicalSymbolSearch(n.left,d);
+			  }
+		  }  
+		  return x;
 	  }
 
 	 public int atMassSearch(Element n,int d) {
