@@ -64,13 +64,22 @@ public class BTnew {
 	
 	
 //################# SEARCHING ELEMENTS ######################	
-	void display(Element falsehead){
+	/*void display(Element falsehead){
 		if (falsehead.left!=null) display(falsehead.left);
 		falsehead.display();
 		System.out.println("");
 		if (falsehead.right!=null) display(falsehead.right);
 		
-	}
+	}*/
+	void display(Element falsehead){
+	if (falsehead.left!=null) display(falsehead.left);
+	falsehead.display();
+	System.out.println("..............................................................................................................");
+	System.out.println("Name: "+falsehead.name+"\t"+"Chemical Symbol: "+falsehead.chemicalSymbol+"\t"+"\n"+"Block: "+falsehead.block+"\t"+"Group: "+falsehead.group+"\n"+"Atomic number: "+falsehead.atomicNo+"\t"+"Atomic mass number"+falsehead.atomicMass);
+	System.out.println("..............................................................................................................");
+	if (falsehead.right!=null) display(falsehead.right);
+	
+}
 	
 	 void displayGroup(String g, Element falsehead) {
 		if (falsehead.left!=null) displayGroup(g,falsehead.left); 
