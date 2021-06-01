@@ -18,9 +18,9 @@ public class Main {
 	
 	static void viewelements() {
 
-				String x;
+		String x="1";
 		while (x!="0") {
-			System.out.print("\n1. View elements by name \2 View elements by atomic number \nEnter your choice");
+			System.out.print("\n0. Go Back \n1. View elements by name \n2 View elements by atomic number \nEnter your choice");
 			
 				x=sc.next();
 				switch(x) {
@@ -33,14 +33,11 @@ public class Main {
 					default: System.out.println("Enter valid value.");
 				}
 			
-			
-			
-			
 		}
 	}
 	
 	static void viewgroup() {
-		String x;
+		String x="1";
 		while(x!="0") {
 			System.out.println("Enter choice:\n0.Go back \n1.Alkali Metal \n2.Alkali Earth Metal \n3.Non-Metal \n4.Metal \n5.Halogen \n6.Noble Gas \n7.Transition Metal \n8.Rare Earth metal");
 			
@@ -81,7 +78,7 @@ public class Main {
 	static void viewBlock()
 	{
 		
-			String x;
+			String x="1";
 			while(x!="0"){
 				System.out.println("\n1. s - block \n 2. p - block \n 3. d - block \n 4. f - block ");
 				
@@ -111,7 +108,7 @@ public class Main {
 	}
 	
 	static void search() {
-		String x;
+		String x="1";
 		int check=0;
 		while(x!="0") {
 			
@@ -158,7 +155,7 @@ public class Main {
 								System.out.print("\nEnter atomic name:");
 								String n=sc.next();
 								check=0;
-								int y=treename.nameSearch(treenum.gethead(),n);
+								int y=treename.nameSearch(treename.gethead(),n);
 								if(y!=0) special.displaySpecial(y);
 								else {
 									check=1;
@@ -174,7 +171,7 @@ public class Main {
 								System.out.print("\nEnter atomic symbol:");
 								String n=sc.next();
 								check=0;
-								int y=treename.chemicalSymbolSearch(treenum.gethead(),n);
+								int y=treename.chemicalSymbolSearch(treename.gethead(),n);
 								if(y!=0) special.displaySpecial(y);
 								else {
 									check=1;
