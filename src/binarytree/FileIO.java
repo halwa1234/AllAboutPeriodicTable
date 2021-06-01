@@ -56,6 +56,7 @@ public class FileIO {
 	
 	void displaySpecial(int i) {
 		
+
 		String name=StringReadCellData(i, 0);
 		String chemicalSymbol=StringReadCellData(i, 1);
 		String block=StringReadCellData(i, 4);
@@ -77,40 +78,53 @@ public class FileIO {
 
 		
 		
+		System.out.println(" __________");
+		System.out.println("                         ");
+		System.out.println("  "+name+"("+chemicalSymbol+")");
+		System.out.println(" __________");
+		
+		System.out.println("\n| Pronounciation    - "+pronounce);
+		System.out.println("\n| Group             - "+group);
+		System.out.println("\n| Block             - "+block);
+		System.out.println("\n| Atomic Number(Z)  - "+atomicNo);
+		System.out.println("\n| Atomic Mass(A)    - "+atomicMass);
+		System.out.println("\n| Description       - "+description);
+		
 		try {
 			String shell=StringReadCellData(i, 7);
-			System.out.println(name+ " ("+chemicalSymbol+")				Pronounciation-"+pronounce
-					+ "\n Group- "+group+"          Block- "+block
-					+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);
-			System.out.println("\nDescription- "+description);
-
-			System.out.println("\nShells-  "+shell+"\nOrbitals-"+orbitals);
-			System.out.println("Name origin- "+nameOrigin);
+			System.out.println("\n| Shells            - "+shell);
 		}
 		catch(IllegalStateException E) {
 			int shell=(int) IntReadCellData(i, 7);
-			System.out.println(name+ " ("+chemicalSymbol+")				Pronounciation-"+pronounce
-					+ "\n Group- "+group+"          Block- "+block
-					+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);
-			System.out.println("\nDescription- "+description);
-
-			System.out.println("\nShells-  "+shell+"\nOrbitals-"+orbitals);
-			System.out.println("Name origin- "+nameOrigin);
+			System.out.println("\n| Shells            - "+shell);
 		}
+		System.out.println("\n| Orbitals          - "+orbitals);
+		System.out.println("\n| Name Origin       - "+nameOrigin);
 		
 
 		try{
 			int year=(int) IntReadCellData(i,36);
-			System.out.println("\nDiscovered by- "+discoveredBy+"    Location- "+location+"    Year-"+year);
+		System.out.println("\n| Discovered By     - "+discoveredBy);
+		System.out.println("\n| Location          - "+location);
+		System.out.println("\n| Year              - "+year);
+			
 
 		}
 		catch(IllegalStateException E){
 			String year=StringReadCellData(i, 36);
-			System.out.println("\nDiscovered by- "+discoveredBy+"    Location- "+location+"    Year-"+year);
+
+			System.out.println("\n| Discovered By     - "+discoveredBy);
+			System.out.println("\n| Location          - "+location);
+			System.out.println("\n| Year              - "+year);
+			
 
 		}
+		                                                                              
+		                                                         
 		
-		System.out.println("\nSources- "+sources);
-		System.out.println("\n Uses- "+uses);
+		System.out.println("\n| Sources           - "+sources);
+		System.out.println("\n| Uses              - "+uses);
 	}
+	
+	
 }
