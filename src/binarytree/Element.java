@@ -48,8 +48,16 @@ public class Element {
 	}
 	
 	void display(){
-		System.out.println(name+ " ("+chemicalSymbol+")\n Group- "+group+"          Block- "+block
-				+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);
+		System.out.println("\n\t\t________________________________________");
+		
+		System.out.println("\t\t  "+name+"("+chemicalSymbol+")");
+		System.out.println("\t\t________________________________________\n");
+		System.out.println("\t\t|Group            - "+group);
+		System.out.println("\n\t\t|Block            - "+block);
+		System.out.println("\n\t\t|Atomic Number    - "+atomicNo);
+		System.out.println("\n\t\t|Atomic Mass      - "+atomicMass);
+		/*System.out.println(name+ " ("+chemicalSymbol+")\n Group- "+group+"          Block- "+block
+				+ "\n Atomic Number-"+ atomicNo+ "\n Atomic Mass-"+ atomicMass);*/
 	}
 	
 	
