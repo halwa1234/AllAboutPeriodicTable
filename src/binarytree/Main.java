@@ -91,7 +91,7 @@ public class Main {
 				case "0":System.out.println("Going back");
 					   break;
 				case "1":System.out.println("Alkali group elements");
-					treename.displayGroup("Alkali",treename.gethead());
+					treename.displayGroup("Alkali Metal",treename.gethead());
 					   break;
 				case "2":System.out.println("Alkali Earth Metal group elements");
 					treename.displayGroup("Alkali Earth Metal",treename.gethead());
@@ -310,10 +310,10 @@ public class Main {
 						System.exit(0);
 				case 1: viewelements();
 						break;
-				case 2:viewgroup();
+				case 2:viewBlock();
 						break;
 
-				case  3 :viewBlock();
+				case  3 :viewgroup();
 					        break;
 				case 4: search();
 						break;
