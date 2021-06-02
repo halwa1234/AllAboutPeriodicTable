@@ -322,6 +322,7 @@ public class Main {
 				default:System.out.println("Enter correct choice");
 			}
 		}catch(InputMismatchException E) {
+			sc.next();
 			System.out.println("Enter valid value.");
 		}
 
