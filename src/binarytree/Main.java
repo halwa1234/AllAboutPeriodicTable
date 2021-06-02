@@ -24,15 +24,33 @@ public class Main {
 
 				String x="";
 		do{
-			System.out.print("\n0. Go Back \n1. View elements by name \n2 View elements by atomic number \nEnter your choice");
+			System.out.println("\n\n\t\t|---------------------------------------------");
+			System.out.println("\t\t|   How you want to get the elements ?       |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|   1.  |     By Name                        |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|   2.  |     By Atomic                      |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|   0.  |     Exit                           |");
+			System.out.println("\t\t|--------------------------------------------|\n");
+			System.out.println("\n\t__________________________________________________________________________________________________\n");
+			System.out.print("\t\tEnter your choice : ");
 
 				x=sc.next();
 				switch(x) {
 					case "0": System.out.println("Going back");
 							break;
-					case "1": treename.display(treename.gethead());
+					case "1": System.out.println("\n\t\t_________________________________________________");
+						
+						System.out.println(" \t\t Elements of Periodic Table are :               ");
+						System.out.println("\t\t _________________________________________________\n\n");
+						treename.display(treename.gethead());
 							break;
-					case "2": treenum.display(treenum.gethead());
+					case "2": System.out.println("\n\t\t_________________________________________________");
+						
+						System.out.println(" \t\t Elements of Periodic Table are :               ");
+						System.out.println("\t\t _________________________________________________\n\n");
+						treenum.display(treenum.gethead());
 							break;
 					default: System.out.println("Enter valid value.");
 				}
@@ -43,7 +61,30 @@ public class Main {
 	static void viewgroup() {
 		String x="";
 		do{
-			System.out.println("Enter choice:\n0.Go back \n1.Alkali Metal \n2.Alkali Earth Metal \n3.Non-Metal \n4.Metal \n5.Halogen \n6.Noble Gas \n7.Transition Metal \n8.Rare Earth metal");
+			System.out.println("\n\t\t|--------------------------------------------|");
+			System.out.println("\t\t|             Choose the Group               |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|  1.  |  Alkali Metal                       |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|  2.  |  Alkali Earth Metal                 |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|  3.  |  Non-Metal                          |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|  4.  |  Metal                              |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|  5.  |  Halogen                            |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|  6.  | Noble Gas                           |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|  7.  |  Transition Metal                   |");
+			System.out.println("\t\t|--------------------------- ----------------|");
+			System.out.println("\t\t|  8.  |  Rare Earth metal                   |");
+			System.out.println("\t\t|--------------------------------------------|");
+			System.out.println("\t\t|  0.  |  EXIT                               |");
+			System.out.println("\t\t|--------------------------------------------|\n");
+			//System.out.println("Enter choice:\n0.Go back \n1.Alkali Metal \n2.Alkali Earth Metal \n3.Non-Metal \n4.Metal \n5.Halogen \n6.Noble Gas \n7.Transition Metal \n8.Rare Earth metal");
+			System.out.println("\n\t__________________________________________________________________________________________________\n");
+			System.out.print("\t\t Enter your choice : ");
 
 				x=sc.next();
 				switch(x) {
@@ -84,7 +125,22 @@ public class Main {
 
 			String x="";
 			do{
-				System.out.println("\n1. s - block \n 2. p - block \n 3. d - block \n 4. f - block ");
+				System.out.println("\n\n\t\t|----------------------------------|");
+				System.out.println("\t\t|        Choose the Block          |");
+				System.out.println("\t\t|----------------------------------|");
+				System.out.println("\t\t|  1. | s - block                  |");
+				System.out.println("\t\t|----------------------------------|");
+				System.out.println("\t\t|  2. | p - block                  |");
+				System.out.println("\t\t|----------------------------------|");
+				System.out.println("\t\t|  3. | d - block                  |");
+				System.out.println("\t\t|----------------------------------|");
+				System.out.println("\t\t|  4. | f - block                  |");
+				System.out.println("\t\t|----------------------------------|");
+				System.out.println("\t\t|  0. | EXIT                       |");
+				System.out.println("\t\t|----------------------------------|\n");
+				System.out.println("\n\t__________________________________________________________________________________________________\n");
+				//System.out.println("\n1. s - block \n 2. p - block \n 3. d - block \n 4. f - block ");
+				System.out.print("\t\t Enter your choice : ");
 
 					x=sc.next();
 					switch(x) {
@@ -117,7 +173,22 @@ public class Main {
 		do{
 
 				if (check==0) {
-					System.out.println("\nSEARCH BY-\n0. Go back \n1. Atomic number \n2. Atomic mass number \n3. Name \n4. Symbol \n Enter choice:");
+					System.out.println("\n\n\t\t|--------------------------------------|");
+					System.out.println("\t\t|  Choose the Search By option :       |");
+					System.out.println("\t\t|--------------------------------------|");
+					System.out.println("\t\t|  1. |  Atomic Number                 |");
+					System.out.println("\t\t|--------------------------------------|");
+					System.out.println("\t\t|  2. |  Atomic mass number            |");
+					System.out.println("\t\t|--------------------------------------|");
+					System.out.println("\t\t|  3. |  Name                          |");
+					System.out.println("\t\t|--------------------------------------|");
+					System.out.println("\t\t|  4. |  Symbol                        |");
+					System.out.println("\t\t|--------------------------------------|");
+					System.out.println("\t\t|  0. |  EXIT                          |");
+					System.out.println("\t\t|--------------------------------------|\n");
+					//System.out.println("\nSEARCH BY-\n0. Go back \n1. Atomic number \n2. Atomic mass number \n3. Name \n4. Symbol \n Enter choice:");
+					System.out.println("\n\t__________________________________________________________________________________________________\n");
+					System.out.print("\t\t Enter your choice : ");
 					x=sc.next();
 				}
 				switch(x){
@@ -205,7 +276,7 @@ public class Main {
 	String s="";
 	int ch=1,n,n1;
 	float m;
-	do{
+	while(ch!=0){
 		try {
 			System.out.println("\t\t\t ________________________________________________________");
 			System.out.println("\t\t\t|                                                        |");
@@ -254,7 +325,6 @@ public class Main {
 			System.out.println("Enter valid value.");
 		}
 
-	}while(x.compareTo("0") > 0);
-  }
+	}
 
 }
